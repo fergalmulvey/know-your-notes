@@ -1,0 +1,21 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* General styles */
+body {
+    background-color: white;
+    font-family: "Lato", sans-serif;
+    color: black;
+    text-align: center;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Oswald", sans-serif;
+}
+
+.logo {
+    height: 50px;
+    padding-right: 5px;
+}
