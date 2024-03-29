@@ -30,17 +30,38 @@
         <div class="test-area">
 
             <!-- Select which clef to be tested on -->
-            <h2>Test your knowledge on the treble clef, the bass clef, or both!</h2>
+            <h2>Test your knowledge...</h2>
             <div class="clefs-area">
-                <button data-clef="treble">
+                <button data-type="treble">
                     <img class = "treble-clef" src="assets/images/treble.png" alt="treble clef">
                 </button>
-                <button data-clef="bass">
+                <button data-type="bass">
                     <img class = "bass-clef" src="assets/images/bass.png" alt="bass clef">
                 </button>
-                <button data-clef="both">
-                    <img class = "treble-clef" src="assets/images/treble.png" alt="treble clef">&<img class = "bass-clef" src="assets/images/bass.png" alt="bass clef">
+                <button data-type="both">
+                    Both
                 </button>
+            </div>
+
+            <!-- Image question -->
+            <div class="question-area">
+                <img id ="question" data-note="a" src ="assets/images/placeholder.png" alt="placeholder" >
+            </div>
+
+            <!-- Answer selector -->
+            <div class="answer-area">
+                <button data-type="submit" id="a">A</button>
+                <button data-type="submit" id="b">B</button>
+                <button data-type="submit" id="c">C</button>
+                <button data-type="submit" id="d">D</button>
+                <button data-type="submit" id="e">E</button>
+                <button data-type="submit" id="f">F</button>
+                <button data-type="submit" id="g">G</button>
+            </div>
+
+            <!-- scorekeeping -->
+            <div class = "score-area">
+                <p>score:<span id="score">0</span></p>
             </div>
         </div>
     </main>

@@ -18,7 +18,7 @@ body {
 /* Header*/
 header {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: "Noto Sans", sans-serif;
     margin-left: auto;
     background-color: palevioletred;
@@ -46,7 +46,7 @@ header {
 }
 .clefs-area button{
     width: 110px;
-    height: 110px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,12 +67,41 @@ header {
     padding: 5px;
 }
 
+/* Question Image */
+.question-area{
+    width: 50%;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-area img{
+    height: 200px;
+    width: 200px;
+    border-style: solid;
+}
+
+/* Answer Buttons */
+.answer-area{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.answer-area button{
+    width: 50px;
+    height: 50px;
+}
+
+
 /* Media query: header no longer fits on one line */
 @media screen and (max-width: 700px) {
 
     /* Header */
     header {
-     font-size: 0.9rem;
+     font-size: 0.8rem;
     }
 
     h2{
