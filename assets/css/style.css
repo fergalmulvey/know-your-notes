@@ -66,6 +66,7 @@ header {
     height: 35px;
     padding: 5px;
 }
+
 /* Media query: header no longer fits on one line */
 @media screen and (max-width: 700px) {
 
