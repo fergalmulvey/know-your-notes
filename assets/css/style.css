@@ -9,7 +9,7 @@
 
 /* General styles */
 body {
-    background-color: white;
+    background-image: url("../images/audience.jpg");;
     font-family: "Lato", sans-serif;
     color: black;
     text-align: center;
@@ -21,13 +21,13 @@ header {
     font-size: 1.3rem;
     font-family: "Noto Sans", sans-serif;
     margin-left: auto;
-    background-color: palevioletred;
+    background-color: rgb(175, 0, 58);
     padding: 10px;
 }
 
 /* Test layout */
 .test-area {
-    background-color: #E6ECF0;
+    background-color: rgba(184, 184, 184, 0.863);
     box-sizing: border-box;
     width: 85%;
     height: 90%;
