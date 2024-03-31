@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for (let button of buttons){
         button.addEventListener("click",function(){
-            let testType = this.getAttribute("data-type");
             if (this.getAttribute("data-type") === "submit"){
                 let note = this.getAttribute("id");
-                checkAnswer(note,testType);
+                checkAnswer(note);
             }
             else {
+                let testType = this.getAttribute("id");
                 displayQuestion(testType);
             }
         })
@@ -18,16 +18,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-function checkAnswer(usersNote, testType){
-    let correctAnswer = document.getElementById("question").getAttribute("data-note");
+function checkAnswer(usersNote){
+    let correctAnswer = document.getElementById("question").getAttribute("src")[14];
     if(usersNote === correctAnswer){
         incrementScore();
         alert("Good Job!")
     }
     else{
         alert(`Stop this silliness, the answer is ${correctAnswer} and you answered ${usersNote}? `);
-        displayQuestion(testType);
-    }
+    };
+    let testType = document.getElementById("question").getAttribute("data-clef");
+    displayQuestion(testType);
 }
 
 function incrementScore(){
@@ -44,14 +45,18 @@ function displayQuestion(testType){
     if (testType === "treble"){
         let i = Math.floor(Math.random() * 13 + 13);
         question.setAttribute("src", "assets/images/" + images[i]);
+        question.setAttribute("data-clef", "treble");
+
     }
     else if (testType === "bass"){
         let i = Math.floor(Math.random() * 13);
         question.setAttribute("src", "assets/images/" + images[i]);
+        question.setAttribute("data-clef", "bass");
     }
     else if (testType === "both"){
         let i = Math.floor(Math.random() * 26);
         question.setAttribute("src", "assets/images/" + images[i]);
+        question.setAttribute("data-clef", "both");
     }
     else {
         alert(`Unknown test type: ${testType}`);

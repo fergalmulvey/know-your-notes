@@ -32,20 +32,20 @@
             <!-- Select which clef to be tested on -->
             <h2>Test your knowledge...</h2>
             <div class="clefs-area">
-                <button data-type="treble">
+                <button data-type="selector" id="treble">
                     <img class = "treble-clef" src="assets/images/treble.png" alt="treble clef">
                 </button>
-                <button data-type="bass">
+                <button data-type="selector" id="bass">
                     <img class = "bass-clef" src="assets/images/bass.png" alt="bass clef">
                 </button>
-                <button data-type="both">
+                <button data-type="selector" id="both">
                     Both
                 </button>
             </div>
 
             <!-- Image question -->
             <div class="question-area">
-                <img id ="question" data-note="a" src ="assets/images/placeholder.png" alt="placeholder" >
+                <img id ="question" src ="assets/images/placeholder.png" alt="placeholder" data-clef="treble">
             </div>
 
             <!-- Answer selector -->
