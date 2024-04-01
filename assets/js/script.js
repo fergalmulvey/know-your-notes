@@ -37,6 +37,12 @@ function incrementScore(){
 }
 
 function displayQuestion(testType){
+    let selectors = [document.getElementById("treble"), document.getElementById("bass"), document.getElementById("both")];
+
+    for(let selector of selectors){
+        selector.style.backgroundColor = "white";
+    }
+
     let question = document.getElementById('question');
 
     let images = ["e1.png", "f1.png", "g1.png", "a1.png", "b1.png", "c1.png", "d1.png", "e2.png", "f2.png", "g2.png", "a2.png", "b2.png", "c2.png",
@@ -46,17 +52,20 @@ function displayQuestion(testType){
         let i = Math.floor(Math.random() * 13 + 13);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "treble");
+        selectors[0].style.backgroundColor = "red";
 
     }
     else if (testType === "bass"){
         let i = Math.floor(Math.random() * 13);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "bass");
+        selectors[1].style.backgroundColor = "red";
     }
     else if (testType === "both"){
         let i = Math.floor(Math.random() * 26);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "both");
+        selectors[2].style.backgroundColor = "red";
     }
     else {
         alert(`Unknown test type: ${testType}`);
