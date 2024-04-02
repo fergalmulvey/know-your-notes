@@ -9,7 +9,11 @@
 
 /* General styles */
 body {
-    background-image: url("../images/audience.jpg");;
+    height: auto;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
     font-family: "Lato", sans-serif;
     color: black;
     text-align: center;
@@ -18,10 +22,11 @@ body {
 /* Header*/
 header {
     text-align: center;
-    font-size: 4rem;
+    font-size: 1.3rem;
     font-family: "Noto Sans", sans-serif;
     margin-left: auto;
-    background-color: red;
+    color: bisque;
+    background-color: rgba(0, 0, 139, 0.8);
     padding: 10px;
 }
 

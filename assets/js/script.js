@@ -20,24 +20,41 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function checkAnswer(usersNote){
     let correctAnswer = document.getElementById("question").getAttribute("src")[14];
+    let answerBtn = document.getElementById(usersNote);
+    let correctBtn = document.getElementById(correctAnswer);
+
     if(usersNote === correctAnswer){
-        incrementScore();
-        alert("Good Job!")
+        incrementCorrect();
+        answerBtn.style.backgroundColor = "lime"
     }
     else{
-        alert(`Stop this silliness, the answer is ${correctAnswer} and you answered ${usersNote}? `);
+        incrementIncorrect();
+        answerBtn.style.backgroundColor = "red";
+        correctBtn.style.backgroundColor = "lime";
     };
     let testType = document.getElementById("question").getAttribute("data-clef");
     displayQuestion(testType);
 }
 
-function incrementScore(){
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
+function incrementCorrect(){
+    let oldScore = parseInt(document.getElementById("correct").innerText);
+    document.getElementById("correct").innerText = ++oldScore;
+}
+
+function incrementIncorrect(){
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
 }
 
 function displayQuestion(testType){
     let selectors = [document.getElementById("treble"), document.getElementById("bass"), document.getElementById("both")];
+    let answerBtns = document.getElementsByClassName("answer-btn");
+
+    setTimeout(function() {
+        for(let btn of answerBtns){
+            btn.style.backgroundColor = "white";
+        }},750);
+    
 
     for(let selector of selectors){
         selector.style.backgroundColor = "white";
@@ -52,20 +69,20 @@ function displayQuestion(testType){
         let i = Math.floor(Math.random() * 13 + 13);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "treble");
-        selectors[0].style.backgroundColor = "red";
+        selectors[0].style.backgroundColor = "lightskyblue";
 
     }
     else if (testType === "bass"){
         let i = Math.floor(Math.random() * 13);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "bass");
-        selectors[1].style.backgroundColor = "red";
+        selectors[1].style.backgroundColor = "lightskyblue";
     }
     else if (testType === "both"){
         let i = Math.floor(Math.random() * 26);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "both");
-        selectors[2].style.backgroundColor = "red";
+        selectors[2].style.backgroundColor = "lightskyblue";
     }
     else {
         alert(`Unknown test type: ${testType}`);
