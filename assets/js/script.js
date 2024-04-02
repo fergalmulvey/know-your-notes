@@ -7,9 +7,12 @@ document.addEventListener("DOMContentLoaded", function(){
                 let note = this.getAttribute("id");
                 checkAnswer(note);
             }
-            else {
+            else if(this.getAttribute("data-type") === "selector"){
                 let testType = this.getAttribute("id");
                 displayQuestion(testType);
+            }
+            else{
+                location.reload();
             }
         })
     }
@@ -52,12 +55,12 @@ function displayQuestion(testType){
 
     setTimeout(function() {
         for(let btn of answerBtns){
-            btn.style.backgroundColor = "white";
+            btn.style.backgroundColor = null;
         }},750);
     
 
     for(let selector of selectors){
-        selector.style.backgroundColor = "white";
+        selector.style.backgroundColor = null;
     }
 
     let question = document.getElementById('question');
@@ -69,20 +72,20 @@ function displayQuestion(testType){
         let i = Math.floor(Math.random() * 13 + 13);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "treble");
-        selectors[0].style.backgroundColor = "lightskyblue";
+        selectors[0].style.backgroundColor = "rgb(0,213,209)";
 
     }
     else if (testType === "bass"){
         let i = Math.floor(Math.random() * 13);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "bass");
-        selectors[1].style.backgroundColor = "lightskyblue";
+        selectors[1].style.backgroundColor = "rgb(0,213,209)";
     }
     else if (testType === "both"){
         let i = Math.floor(Math.random() * 26);
         question.setAttribute("src", "assets/images/" + images[i]);
         question.setAttribute("data-clef", "both");
-        selectors[2].style.backgroundColor = "lightskyblue";
+        selectors[2].style.backgroundColor = "rgb(0,213,209)";
     }
     else {
         alert(`Unknown test type: ${testType}`);

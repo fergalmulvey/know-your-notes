@@ -30,7 +30,7 @@
         <div class="test-area">
 
             <!-- Select which clef to be tested on -->
-            <h2>Test your knowledge...</h2>
+            <h2 id="challenge">Test your knowledge...</h2>
             <div class="clefs-area">
                 <button data-type="selector" id="treble">
                     <img class = "treble-clef" src="assets/images/treble.png" alt="treble clef">
@@ -61,8 +61,14 @@
 
             <!-- scorekeeping -->
             <div class = "score-area">
-                <p>Correct: <span id="correct">0</span> Wrong: <span id="incorrect">0</span></p>
+                <p>Correct: <span id="correct">0</span> Incorrect: <span id="incorrect">0</span></p>
             </div>
+
+            <!-- Reset Button -->
+            <div class="reset">
+                <button id="refresh">Reset</button>
+            </div>
+
         </div>
     </main>
     <!-- JavaScript -->
