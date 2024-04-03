@@ -25,7 +25,7 @@ function checkAnswer(usersNote){
     let correctAnswer = document.getElementById("question").getAttribute("src")[14];
     let answerBtn = document.getElementById(usersNote);
     let correctBtn = document.getElementById(correctAnswer);
-
+    
     if(usersNote === correctAnswer){
         incrementCorrect();
         answerBtn.style.backgroundColor = "lime"
