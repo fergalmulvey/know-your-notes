@@ -9,6 +9,7 @@
 
 /* General styles */
 body {
+    background-color: rgba(0, 29, 37);
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-position: center; 
